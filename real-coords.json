@@ -1,0 +1,76 @@
+[
+    {
+        "battle": 1,
+        "x": 105,
+        "y": 978
+        // action: left-click mouse button
+    },
+    {
+        "find a match": 2,
+        "x": 267,
+        "y": 759
+        // action: left-click mouse button
+    },
+    {
+        "attack": 3,
+        "x": 1638,
+        "y": 921
+        // action: left-click mouse button
+    },
+    // action: wait 7 seconds
+    {
+        "center of the map": 4,
+        "x": 964,
+        "y": 499
+        // action: zoom out with 3 scrolls
+    },
+    // hold left-click for 2 seconds.
+    // drag the whole coordinates in 9 seconds. 
+    // do another lap in 5seconds.
+    {
+        "top": 5,
+        "x": 873,
+        "y": 14
+        // action: reach this coordinate and hold left-button for 2 seconds.
+    },
+    {
+        "left": 6,
+        "x": 201,
+        "y": 525
+        // action: drage the mouse to this coordinate still holding the left-button in a straight line.
+    },
+    {
+        "bottom": 7,
+        "x": 971,
+        "y": 1079
+        // action: drage the mouse to this coordinate still holding the left-button in a straight line.
+    },
+    {
+        "right": 8,
+        "x": 1737,
+        "y": 513
+        // action: drage the mouse to this coordinate still holding the left-button in a straight line.
+    },
+    {
+        "top": 9,
+        "x": 965,
+        "y": 0
+        // action: drage the mouse to this coordinate still holding the left-button in a straight line.
+    },
+    // wait for 45 seconds.
+    {
+        "end battle/surr": 10,
+        "x": 145,
+        "y": 859
+    },
+    {
+        "end battle okay": 11,
+        "x": 1135,
+        "y": 679
+    },
+    {
+        "return to home": 12,
+        "x": 964,
+        "y": 929
+    }
+]
