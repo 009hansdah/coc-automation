@@ -1,0 +1,9 @@
+# Clash of Clans - Gold Mine Detection Dataset Configuration
+path: dataset
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: gold_mine
+

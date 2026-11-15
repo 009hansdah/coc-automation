@@ -1,2 +1,7 @@
 pyautogui
 pynput
+ultralytics
+opencv-python
+mss
+numpy
+matplotlib

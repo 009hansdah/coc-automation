@@ -48,9 +48,10 @@ pyautogui.PAUSE = 0.05
 # Drag route: top -> left -> bottom -> right -> top
 DRAG_POINTS = [
     (859, 0),     # 5 top    (press + hold here)
-    (79, 521),    # 6 left
-    (971, 1079),   # 7 bottom
-    (1737, 510),   # 8 right
+    (80, 521),    # 6 left
+    (859, 1079),   # 7 new bottom-left 
+    (1062, 1079),  # new bottom-right (corrected y=1079 at screen bottom)
+    (1788, 535),   # 8 right
     (1062, 0),      # 9 top    (release here)
 ]
 
