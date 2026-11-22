@@ -11,17 +11,18 @@ import math
 from typing import Sequence, Tuple, List, Dict, Any
 import numpy as np
 
-# Coordinates from auto_actions.py:
-# Top-Left -> Left -> Bottom-Left -> Bottom-Right -> Right -> Top-Right -> Top-Left
-DEFAULT_PERIMETER = [
+# Boundary points (Top-Left -> Left -> Bottom-Left -> Bottom-Right -> Right -> Top-Right -> Top-Left)
+BOUNDARY_POINTS = [
     (859, 0),      # 1. Top-Left (press + hold start)
     (80, 521),     # 2. Left
-    (859, 1079),   # 3. New Bottom-Left
-    (1062, 1079),  # 4. New Bottom-Right (y=1079 screen bottom edge)
+    (613, 903),    # 3. New Bottom-Left
+    (1239, 905),   # 4. New Bottom-Right
     (1788, 535),   # 5. Right
     (1062, 0),     # 6. Top-Right (release point)
     (859, 0),      # 7. Loop closure along top edge
 ]
+
+DEFAULT_PERIMETER = BOUNDARY_POINTS
 
 
 def closest_point_on_segment(
@@ -153,6 +154,9 @@ def find_closest_perimeter_point(
     best_mine_pt = (0.0, 0.0)
 
     for seg_a, seg_b, idx in segments:
+
+        if idx==2:          # to not deploy in bottom segment
+            continue
         if is_single_point:
             pt, dist = closest_point_on_segment(target, seg_a, seg_b)
             mine_pt = (float(target[0]), float(target[1]))
@@ -245,12 +249,12 @@ def _self_check():
     assert math.isclose(mine_b[1], 100.0)
 
     # 4. Perimeter closest check with new 6-sided boundary
-    # Mine near the bottom horizontal segment (seg 2: (859, 1079) -> (1062, 1079))
-    mine_bottom = (960.0, 950.0)
+    # Mine near the bottom segment (seg 2: (613, 903) -> (1239, 905))
+    mine_bottom = (926.0, 850.0)
     best_pt, dist, seg, mpt = find_closest_perimeter_point(mine_bottom, DEFAULT_PERIMETER)
     assert seg == 2, f"Expected segment 2 for bottom mine, got {seg}"
-    assert math.isclose(best_pt[0], 960.0) and math.isclose(best_pt[1], 1079.0)
-    assert math.isclose(dist, 129.0)
+    assert math.isclose(best_pt[0], 925.83, abs_tol=0.1) and math.isclose(best_pt[1], 904.0, abs_tol=0.1)
+    assert math.isclose(dist, 54.0, abs_tol=0.1)
 
     # 5. Box-based drop calculation
     res = calculate_drop_points(boxes=[box])

@@ -61,10 +61,10 @@ except ImportError:
 # Import local heatmap generator & drop calculator
 try:
     from heatmap import generate_heatmap
-    from drop_calculator import DEFAULT_PERIMETER, calculate_drop_points
+    from drop_calculator import DEFAULT_PERIMETER, BOUNDARY_POINTS, calculate_drop_points
 except ImportError:
     from src.heatmap import generate_heatmap
-    from src.drop_calculator import DEFAULT_PERIMETER, calculate_drop_points
+    from src.drop_calculator import DEFAULT_PERIMETER, BOUNDARY_POINTS, calculate_drop_points
 
 
 def get_default_save_dir() -> str:

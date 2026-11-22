@@ -4,7 +4,7 @@ Real-time computer vision system to detect Gold Mines in Clash of Clans gameplay
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 coc-automation/
@@ -36,7 +36,7 @@ coc-automation/
 
 ---
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 ### 1. Collect Screenshots
 Run the capture utility with your game or emulator open:

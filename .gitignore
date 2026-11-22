@@ -10,6 +10,8 @@ __pycache__/
 *$py.class
 *.pyd
 
+resume.txt  
+
 # Datasets & raw images
 dataset/images/
 dataset/raw/
