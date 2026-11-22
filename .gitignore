@@ -12,6 +12,8 @@ __pycache__/
 
 resume.txt  
 
+dataset-gold/
+
 # Datasets & raw images
 dataset/images/
 dataset/raw/
